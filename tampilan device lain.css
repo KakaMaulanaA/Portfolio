@@ -1,0 +1,91 @@
+/* Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 15vw; /* biar nyusut di tablet */
+    -webkit-text-stroke: 0.5vw #5A5C6A;
+    top:20%;
+  }
+  .circle {
+    width: 40vw;
+    height: 40vw;
+    bottom: unset;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .intro {
+    bottom: 12%;
+  }
+  .role-badge {
+    font-size: 2vw;
+    bottom:12%;
+    font-size: 12pt;
+    padding: 1vw 2vw;
+  }
+  .hola, .name {
+    font-size: 3vw;
+  }
+  .container{
+    max-height: 70vh;
+  }
+  .sertifikat-grid {
+    gap: 4vw;
+    grid-template-columns: auto auto;
+    width: 100%;
+  }
+}
+
+/* HP */
+@media (max-width: 768px) {
+  .title {
+    font-size: 20vw;
+    -webkit-text-stroke: 0.6vw #3A3A3A;
+    letter-spacing: 1vw;
+  }
+
+  .circle {
+    width: 80vw;
+    height: 80vw;
+  }
+  .hola, .name {
+    font-size: 5vw;
+  }
+  .intro {
+    bottom: 8%;
+    left: 5vw;
+  }
+  .role-badge {
+    font-size: 3.5vw;
+    top: auto;
+    bottom: 8%;
+    right: 5vw;
+    max-width: 30vw;
+    transform: translateX(0vw) translateY(-8%);
+    padding: 2vw 4vw;
+  }
+  .tentang-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .rounded-arch {
+    height: 60vh;
+    border-radius: 30vw 30vw 0 0;
+  }
+  .deskripsi {
+    font-size: 1rem;
+  }
+  .portfolio-item,
+  .sertifikat-item{
+    width: 100%;
+    max-height: 200px;
+  }
+  .sertifikat-grid,
+  .sertifikat-container{
+    padding: 0;
+  }
+  .portfolio-grid,
+  .sertifikat-grid {
+    gap: 4vw;
+    grid-template-columns: 100%;
+  }
+}

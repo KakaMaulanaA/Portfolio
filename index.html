@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kaka Maulana</title>
+    <link rel="stylesheet" href="tampilan.css">
+    <link rel="stylesheet" href="tampilan device lain.css">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">PORTFOLIO</h1>
+
+        <div class="circle">
+            <img src="img/Mask group.png" alt="Kaka Maulana" class="profile-img">
+        </div>
+
+        <div class="intro">
+            <h2 class="hola">HOLA!!</h2>
+            <p class="name typed"></p> <!-- Efek typewriter -->
+        </div>
+
+        <div class="role-badge">
+            3D MODELER & GRAPHIC DESIGNER
+        </div>
+    </div>
+
+    <!-- Tambahkan setelah container yang pertama -->
+    <section class="tentang-saya">
+        <h2 class="judul-tentang">Tentang Saya</h2>
+        <div class="tentang-container">
+            <div class="rounded-arch">
+                <img src="img/Foto 2.png" alt="Kaka Maulana">
+            </div>
+
+            <div class="deskripsi">
+                <p>
+                    Halo, saya Kaka Maulana Avrianto, lulusan SMK Telkom Malang jurusan TKJ dengan fokus Cloud Computing
+                    Developer.
+                    Saya tertarik di dunia desain grafis, UI/UX, dan 3D modeling, dan sudah berpengalaman magang di IBRA
+                    Creative Studio sebagai Graphic Designer dan 3D Modeler.
+                    <br><br>
+                    Saya terbiasa bekerja dengan Blender, Adobe Illustrator, After Effects, Photoshop, Figma, dan
+                    WordPress, serta punya dasar web development dengan HTML, PHP, dan database.
+                    Beberapa karya saya meliputi desain logo, flyer, 3D arsitektur, hingga pembuatan website.
+                    <br><br>
+                    Bagi saya, desain bukan sekadar visual, tapi cara menyampaikan ide dengan kreatif dan tepat sasaran.
+                </p>
+                <a href="cv-kaka.pdf" class="download-btn" download>
+                    <span>⬇</span> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2 class="portfolio-title">Portfolio</h2>
+
+        <div class="portfolio-tabs">
+            <button class="tab" onclick="loadPortfolio('3D desain.html')">3D Desain</button>
+            <button class="tab" onclick="loadPortfolio('Desain Background.html')">Desain Background</button>
+            <button class="tab" onclick="loadPortfolio('Animasi.html')">Animasi</button>
+            <button class="tab" onclick="loadPortfolio('Web desain.html')">Web Desain</button>
+        </div>
+
+        <!-- Container isi box -->
+        <div class="portfolio-grid" id="portfolio-container">
+            <!-- Isi default bakal dimuat lewat JS -->
+        </div>
+    </section>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('3D desain.html');
+    </script>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('Desain Background.html');
+    </script>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('Animasi.html');
+    </script>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('Web desain.html');
+    </script>
+
+    <section class="sertifikat">
+        <h2 class="sertifikat-title">Sertifikat</h2>
+
+        <div class="sertifikat-tabs">
+            <button class="tab" onclick="loadsertifikat('Kompetisi.html')">Kompetisi</button>
+            <button class="tab" onclick="loadsertifikat('Pelatihan.html')">Pelatihan</button>
+            <button class="tab" onclick="loadsertifikat('Bahasa.html')">Bahasa</button>
+        </div>
+
+        <!-- Container isi box -->
+        <div class="sertifikat-grid" id="sertifikat-container">
+            <!-- Isi default bakal dimuat lewat JS -->
+        </div>
+    </section>
+
+    <script>
+        function loadsertifikat(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('sertifikat-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadsertifikat('Kompetisi.html');
+    </script>
+
+    <script>
+        function loadsertifikat(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('sertifikat-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadsertifikat('Pelatihan.html');
+    </script>
+
+    <script>
+        function loadsertifikat(file) {
+            const container = document.getElementById('sertifikat-container');
+            container.style.opacity = 0;
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    setTimeout(() => {
+                        container.innerHTML = data;
+                        container.style.opacity = 1; // fade in lagi
+                    }, 300);
+
+                });
+        }
+
+        // load default pas buka halaman
+        loadsertifikat('Bahasa.html');
+    </script>
+
+    <section class="skills-section">
+        <h2 class="skills-title">Kemampuan</h2>
+        <div class="skills-icons">
+            <img src="img vector/Group 13.png" alt="VS Code">
+            <img src="img vector/Vector-1.png" alt="Figma">
+            <img src="img vector/Vector.png" alt="Blender">
+            <img src="img vector/Group.png" alt="Adobe Illustrator">
+            <img src="img vector/Group-1.png" alt="Adobe Photoshop">
+            <img src="img vector/Vector-2.png" alt="WordPress">
+            <img src="img vector/Group 12.png" alt="After Effects">
+        </div>
+
+        <footer class="skills-footer">
+            <div class="footer-left">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/kaka_mlnkyto?utm_source=qr&igsh=MWVnc2ptN213dW8zaw==" target="_blank" rel="noopener noreferrer">
+                        <img src="img sosial media/Group 12.png" alt="Instagram">
+                    </a>
+                    <a href="www.linkedin.com/in/kaka-maulana-avrianto-47b351327" target="_blank" rel="noopener noreferrer">
+                        <img src="img sosial media/Group 14.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/KakaMaulanaA" target="_blank" rel="noopener noreferrer">
+                        <img src="img sosial media/Group.png" alt="GitHub">
+                    </a>
+                </div>
+
+                <h3>Kakamaulana124@gmail.com</h3>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2025 Kaka Maulana Avrianto</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed('.typed', {
+            strings: ["SAYA KAKA MAULANA."],
+            typeSpeed: 80,   // kecepatan mengetik
+            backSpeed: 40,   // kecepatan menghapus
+            backDelay: 1500, // delay sebelum hapus
+            loop: true       // biar looping
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+    <script src="script sertifikat.js"></script>
+
+</body>
+
+</html>
