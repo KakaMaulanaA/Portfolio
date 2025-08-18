@@ -49,7 +49,9 @@
                     <br><br>
                     Bagi saya, desain bukan sekadar visual, tapi cara menyampaikan ide dengan kreatif dan tepat sasaran.
                 </p>
-                <a href="cv-kaka.pdf" class="download-btn" download>
+                <a href="https://drive.google.com/file/d/1UhLkadtMGkzbZ9MbmaMtTyrhOk50Xr19/view?usp=sharing"
+                    style="background-color: #121212; color: #FD6F00; padding: 10px 20px; border-radius: 5px; text-decoration: none;"
+                    target="_blank" rel="noopener noreferrer">
                     <span>⬇</span> Download CV
                 </a>
             </div>
@@ -64,6 +66,7 @@
             <button class="tab" onclick="loadPortfolio('Desain Background.html')">Desain Background</button>
             <button class="tab" onclick="loadPortfolio('Animasi.html')">Animasi</button>
             <button class="tab" onclick="loadPortfolio('Web desain.html')">Web Desain</button>
+            <button class="tab" onclick="loadPortfolio('3D Ruangan.html')">3D Ruangan</button>
         </div>
 
         <!-- Container isi box -->
@@ -122,6 +125,19 @@
 
         // load default pas buka halaman
         loadPortfolio('Web desain.html');
+    </script>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('3D Ruangan.html');
     </script>
 
     <section class="sertifikat">
@@ -199,10 +215,12 @@
         <footer class="skills-footer">
             <div class="footer-left">
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/kaka_mlnkyto?utm_source=qr&igsh=MWVnc2ptN213dW8zaw==" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/kaka_mlnkyto?utm_source=qr&igsh=MWVnc2ptN213dW8zaw=="
+                        target="_blank" rel="noopener noreferrer">
                         <img src="img sosial media/Group 12.png" alt="Instagram">
                     </a>
-                    <a href="www.linkedin.com/in/kaka-maulana-avrianto-47b351327" target="_blank" rel="noopener noreferrer">
+                    <a href="www.linkedin.com/in/kaka-maulana-avrianto-47b351327" target="_blank"
+                        rel="noopener noreferrer">
                         <img src="img sosial media/Group 14.png" alt="LinkedIn">
                     </a>
                     <a href="https://github.com/KakaMaulanaA" target="_blank" rel="noopener noreferrer">
@@ -235,5 +253,4 @@
     <script src="script sertifikat.js"></script>
 
 </body>
-
 </html>

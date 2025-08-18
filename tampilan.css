@@ -109,7 +109,7 @@ body {
 .tentang-saya {
     background-color: #3A3A3A;
     padding: 80px 5%;
-    color: #121212;
+    color: #ffffff;
     overflow: hidden;
 }
 
@@ -160,26 +160,8 @@ body {
     flex: 1.2;
     font-size: 1.3rem;
     line-height: 1.4;
-    color: #121212;
+    color: #ffffff;
     font-weight: bold;
-}
-
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #121212;
-    color: #FD6F00;
-    padding: 12px 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #121212;
 }
 
 .portfolio {
@@ -437,7 +419,7 @@ body {
     padding: 1vh 5vw;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
+    color: #FD6F00;
 }
 
 .skills-title {
@@ -492,7 +474,7 @@ body {
 
 .footer-right {
     font-weight: bold;
-    color: #ffffff;
+    color: #FD6F00;
     font-size: 1rem;
 }
 
