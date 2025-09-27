@@ -40,8 +40,7 @@
                 <p>
                     Halo, saya Kaka Maulana Avrianto, lulusan SMK Telkom Malang jurusan TKJ dengan fokus Cloud Computing
                     Developer.
-                    Saya tertarik di dunia desain grafis, UI/UX, dan 3D modeling, dan sudah berpengalaman magang di IBRA
-                    Creative Studio sebagai Graphic Designer dan 3D Modeler.
+                    Saya tertarik di dunia desain grafis, UI/UX, dan 3D modeling, dan sudah berpengalaman magang dan freelance sebagai Graphic Designer dan 3D Modeler.
                     <br><br>
                     Saya terbiasa bekerja dengan Blender, Adobe Illustrator, After Effects, Photoshop, Figma, dan
                     WordPress, serta punya dasar web development dengan HTML, PHP, dan database.
@@ -67,6 +66,8 @@
             <button class="tab" onclick="loadPortfolio('Animasi.html')">Animasi</button>
             <button class="tab" onclick="loadPortfolio('Web desain.html')">Web Desain</button>
             <button class="tab" onclick="loadPortfolio('3D Ruangan.html')">3D Ruangan</button>
+            <button class="tab" onclick="loadPortfolio('Poster.html')">Poster</button>
+            <button class="tab" onclick="loadPortfolio('Logo.html')">Logo</button>
         </div>
 
         <!-- Container isi box -->
@@ -140,13 +141,40 @@
         loadPortfolio('3D Ruangan.html');
     </script>
 
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('Poster.html');
+    </script>
+
+    <script>
+        function loadPortfolio(file) {
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('portfolio-container').innerHTML = data;
+                });
+        }
+
+        // load default pas buka halaman
+        loadPortfolio('Logo.html');
+    </script>
+
     <section class="sertifikat">
         <h2 class="sertifikat-title">Sertifikat</h2>
 
         <div class="sertifikat-tabs">
-            <button class="tab" onclick="loadsertifikat('Kompetisi.html')">Kompetisi</button>
+            <button class="tab" onclick="loadsertifikat('kompetisi.html')">Kompetisi</button>
             <button class="tab" onclick="loadsertifikat('Pelatihan.html')">Pelatihan</button>
             <button class="tab" onclick="loadsertifikat('Bahasa.html')">Bahasa</button>
+            <button class="tab" onclick="loadsertifikat('Magang.html')">Magang</button>
         </div>
 
         <!-- Container isi box -->
@@ -200,17 +228,47 @@
         loadsertifikat('Bahasa.html');
     </script>
 
+    <script>
+        function loadsertifikat(file) {
+            const container = document.getElementById('sertifikat-container');
+            container.style.opacity = 0;
+            fetch(file)
+                .then(res => res.text())
+                .then(data => {
+                    setTimeout(() => {
+                        container.innerHTML = data;
+                        container.style.opacity = 1; // fade in lagi
+                    }, 300);
+
+                });
+        }
+
+        // load default pas buka halaman
+        loadsertifikat('Magang.html');
+    </script>
+
     <section class="skills-section">
-        <h2 class="skills-title">Kemampuan</h2>
-        <div class="skills-icons">
-            <img src="img vector/Group 13.png" alt="VS Code">
-            <img src="img vector/Vector-1.png" alt="Figma">
-            <img src="img vector/Vector.png" alt="Blender">
-            <img src="img vector/Group.png" alt="Adobe Illustrator">
-            <img src="img vector/Group-1.png" alt="Adobe Photoshop">
-            <img src="img vector/Vector-2.png" alt="WordPress">
-            <img src="img vector/Group 12.png" alt="After Effects">
-        </div>
+  <h2 class="skills-title">Kemampuan</h2>
+  <div class="skills-icons">
+    <div class="skills-track">
+      <!-- Asli -->
+      <img src="img vector/Group 13.png" alt="VS Code">
+      <img src="img vector/Vector-1.png" alt="Figma">
+      <img src="img vector/Vector.png" alt="Blender">
+      <img src="img vector/Group.png" alt="Adobe Illustrator">
+      <img src="img vector/Group-1.png" alt="Adobe Photoshop">
+      <img src="img vector/Vector-2.png" alt="WordPress">
+      <img src="img vector/Group 12.png" alt="After Effects">
+
+      <!-- Duplikat (biar looping mulus) -->
+      <img src="img vector/Group 13.png" alt="VS Code">
+      <img src="img vector/Vector-1.png" alt="Figma">
+      <img src="img vector/Vector.png" alt="Blender">
+      <img src="img vector/Group.png" alt="Adobe Illustrator">
+      <img src="img vector/Group-1.png" alt="Adobe Photoshop">
+      <img src="img vector/Vector-2.png" alt="WordPress">
+      <img src="img vector/Group 12.png" alt="After Effects">
+    </div>
 
         <footer class="skills-footer">
             <div class="footer-left">

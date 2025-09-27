@@ -416,7 +416,7 @@ body {
 
 .skills-section {
     background-color: #3A3A3A;
-    padding: 1vh 5vw;
+    padding: 1vh 5vw; /* lebih lega daripada 1vh */
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: #FD6F00;
@@ -425,38 +425,53 @@ body {
 .skills-title {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 3vh;
+    margin-bottom: 4vh; /* lebih lega dari 3vh */
 }
 
 .skills-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2vw;
-    margin-bottom: 8vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0; /* ruang tambahan atas & bawah */
 }
 
-.skills-icons img {
-    width: 14vw;
-    max-width: 2.5rem;
-    height: 2.5rem;
-    
+.skills-track {
+    display: flex;
+    align-items: center; /* biar ikon selalu rata tengah secara vertikal */
+    gap: 60px;
+    animation: scroll 20s linear infinite;
 }
 
-.skills-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    flex-wrap: wrap;
-    gap: 2vh;
+.skills-track img {
+    height: 70px;              /* ukuran ikon konsisten */
+    width: auto;
+    object-fit: contain;       /* biar nggak gepeng */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 0 10px;            /* jarak antar ikon */
+    /* Hapus filter default biar tetap warna asli */
+}
+
+.skills-track img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 10px #FD6F00); /* efek glow orange pas hover */
+}
+
+/* Animasi scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .footer-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 70%
+    width: 70%;
+    margin-top: 100px; /* nambah jarak ke bawah */
 }
 
 .social-icons {
@@ -478,3 +493,77 @@ body {
     font-size: 1rem;
 }
 
+/* Efek zoom saat hover di portfolio */
+.portfolio-grid .box-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-grid .box-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Efek fullscreen saat diklik */
+.portfolio-grid .box-image img.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  max-width: 95vw;   /* 95% dari lebar layar */
+  max-height: 95vh;  /* 95% dari tinggi layar */
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  transition: all 0.4s ease;
+  object-fit: contain;   /* biar nggak kepotong */
+}
+
+/* Overlay hitam transparan */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  z-index: 999;
+  display: none;
+}
+
+/* === Efek Zoom Sertifikat === */
+.sertifikat-grid .box-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sertifikat-grid .box-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.sertifikat-grid .box-image img.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 95vh;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  transition: all 0.4s ease;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .sertifikat-grid .box-image img.expanded {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}

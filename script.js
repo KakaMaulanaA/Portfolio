@@ -53,3 +53,58 @@ function loadPortfolio(file) {
             }, 300); // delay biar fade out selesai
         });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const portfolioContainer = document.getElementById("portfolio-container");
+
+  // Bikin overlay
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+
+  // Event delegation (tetap jalan meski isinya dimuat pakai fetch)
+  portfolioContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      e.target.classList.toggle("expanded");
+      overlay.style.display = e.target.classList.contains("expanded")
+        ? "block"
+        : "none";
+    }
+  });
+
+  // Tutup fullscreen kalau overlay diklik
+  overlay.addEventListener("click", () => {
+    document.querySelectorAll(".portfolio-grid img.expanded").forEach((img) => {
+      img.classList.remove("expanded");
+    });
+    overlay.style.display = "none";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sertifikatContainer = document.getElementById("sertifikat-container");
+
+  // Bikin overlay khusus sertifikat
+  const overlaySertif = document.createElement("div");
+  overlaySertif.classList.add("overlay");
+  document.body.appendChild(overlaySertif);
+
+  // Event delegation buat sertifikat
+  sertifikatContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG") {
+      e.target.classList.toggle("expanded");
+      overlaySertif.style.display = e.target.classList.contains("expanded")
+        ? "block"
+        : "none";
+    }
+  });
+
+  // Tutup fullscreen kalau overlay diklik
+  overlaySertif.addEventListener("click", () => {
+    document.querySelectorAll(".sertifikat-grid img.expanded").forEach((img) => {
+      img.classList.remove("expanded");
+    });
+    overlaySertif.style.display = "none";
+  });
+});
+
